@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #0D0B14;
+  min-height: 100vh;
+  font-family: 'DM Sans', sans-serif;
+  overscroll-behavior: none;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+
+textarea { resize: vertical; }
+input, textarea, button { font-family: 'DM Sans', sans-serif; }
+
+/* ── Animations ── */
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes sheetIn {
+  from { opacity: 0; transform: translateY(60px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fabPop {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Interactive states ── */
+.task-card:hover {
+  background: rgba(255,255,255,0.06) !important;
+  border-color: rgba(255,255,255,0.14) !important;
+  transform: translateY(-2px);
+}
+@media (hover: none) {
+  .task-card:hover { transform: none !important; }
+}
+
+.filter-btn:hover       { background: rgba(255,255,255,0.07) !important; }
+.icon-btn:hover         { background: rgba(255,255,255,0.08) !important; color: #F0EDE8 !important; }
+.menu-item:hover        { background: rgba(255,255,255,0.07) !important; }
+.menu-item-danger:hover { background: rgba(248,113,113,0.1) !important; }
+.stat-card:hover        { opacity: 0.85; }
+
+.add-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(245,158,11,0.35) !important;
+}
+.add-btn:active { transform: translateY(0); }
+
+.fab:hover  { transform: scale(1.07) !important; box-shadow: 0 10px 30px rgba(245,158,11,0.4) !important; }
+.fab:active { transform: scale(0.96) !important; }
